@@ -1,3 +1,70 @@
+golang-github-prometheus-client-model (0.5.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Daniel Swarbrick <dswarbrick@debian.org>  Tue, 03 Oct 2023 23:28:22 +0000
+
+golang-github-prometheus-client-model (0.4.0-2) unstable; urgency=medium
+
+  * Declare Breaks due to backwards incompatible protobuf API changes:
+    - Breaks: golang-github-prometheus-client-golang-dev (<< 1.16.0)
+    - Breaks: golang-github-prometheus-common-dev (<< 0.44.0)
+
+ -- Daniel Swarbrick <dswarbrick@debian.org>  Tue, 20 Jun 2023 14:45:26 +0000
+
+golang-github-prometheus-client-model (0.4.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update protobuf dependencies:
+    - replace protoc-gen-go-1-3 with protoc-gen-go
+    - replace golang-github-golang-protobuf-1-{3,5}-dev with
+      golang-google-protobuf-dev
+  * Drop no longer necessary mapping of timestamp.proto when generating
+    metrics.pb.go
+
+ -- Daniel Swarbrick <dswarbrick@debian.org>  Mon, 19 Jun 2023 08:23:47 +0000
+
+golang-github-prometheus-client-model (0.3.0-3) unstable; urgency=medium
+
+  * Team upload
+  * Allow golang-github-golang-protobuf-1-5-dev as optional Depends
+
+ -- Mathias Gibbens <gibmat@debian.org>  Sat, 07 Jan 2023 17:27:42 +0000
+
+golang-github-prometheus-client-model (0.3.0-2) unstable; urgency=medium
+
+  * Bump Standards-Version to 4.6.2 (no changes)
+  * Drop non-existent alternative dependency
+    golang-github-golang-protobuf-dev
+  * Replace golang-goprotobuf-dev dependency, which is now a transitional
+    dummy package, with protoc-gen-go-1-3 and
+    golang-github-golang-protobuf-1-3-dev
+  * d/control: change Section to golang
+  * Refresh patch 01-Use_go_generate.patch to map
+    google/protobuf/timestamp.proto to
+    github.com/golang/protobuf/ptypes/timestamp, preserving the behaviour of
+    protoc < 3.14 (Closes: #1026696)
+
+ -- Daniel Swarbrick <dswarbrick@debian.org>  Thu, 22 Dec 2022 09:07:11 +0000
+
+golang-github-prometheus-client-model (0.3.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Bump Standards-Version to 4.6.1 (no changes)
+
+ -- Daniel Swarbrick <dswarbrick@debian.org>  Tue, 08 Nov 2022 10:31:20 +0000
+
+golang-github-prometheus-client-model (0.2.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Update gbp.conf following latest Go Team workflow.
+  * Update debian/watch file.
+  * Use dh-sequence-golang instead of dh-golang and --with=golang.
+  * Switch to Standards-Version 4.6.0 (no changes needed).
+  * Remove ${shlibs:Depends} from -dev Depends field.
+
+ -- Guillem Jover <gjover@sipwise.com>  Fri, 03 Dec 2021 16:00:39 +0100
+
 golang-github-prometheus-client-model (0.2.0-2) unstable; urgency=medium
 
   * Team upload.
