@@ -2,6 +2,7 @@ Description: Use go generate to regenerate metrics.pb.go from .proto source
  Use go generate to avoid depending on special make rules in
  debian/rules; this allows the CI pipeline in salsa to test the package
  properly.
+Forwarded: not-needed
 --- /dev/null
 +++ b/go/generate.go
 @@ -0,0 +1,3 @@
